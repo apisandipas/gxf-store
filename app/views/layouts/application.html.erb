@@ -33,13 +33,15 @@
 			</div>
 			<div class="seven columns">
 				<nav>
+					<% if current_user %>
+				    Logged in as <%= current_user.email %>.
+				    <%= link_to "Log Out", logout_path %>
+				  <% else%>
 					<ul>
-						<li><a href="services/adoption-foster-care.php">Adopt and Foster</a></li>
-						<li><a href="services/">Services</a></li>
-						<li><a href="culinary-academy/">Culinary Academy</a></li>
-						<li><a href="blog/">Blog</a></li>
-						<li><a href="get-involved/">Get Involved</a></li>
+						<li> <%= link_to "Sign Up", signup_path %></li>
+						<li> <%= link_to "Log In", login_path %></li>
 					</ul>
+					<% end %>
 				</nav>
 			</div>
 		</div>
