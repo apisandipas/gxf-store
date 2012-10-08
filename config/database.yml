@@ -1,0 +1,17 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: gxf-website_development
+  pool: 5
+  username: bparonto
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: gxf-website_test
+  pool: 5
+  username: bparonto
+  password:
+
