@@ -25,6 +25,7 @@ end
 group :test, :development do
   #gem 'guard-rails-assets'
   #gem 'guard-jasmine-headless-webkit'
+  gem 'faker'
   gem 'jasmine-headless-webkit'
   gem 'jasmine'
   gem 'jasminerice', :git => "git://github.com/noelrappin/jasminerice.git"
@@ -33,7 +34,6 @@ group :test, :development do
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'

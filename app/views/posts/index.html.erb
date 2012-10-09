@@ -1,0 +1,18 @@
+<section class="posts">
+
+<% @posts.each do |post| %>
+<article class="post">
+
+  <h2>
+    <%= link_to post.title, post_path(post) %> 
+    <small> <%= post.updated_at.strftime('%m.%d.%y') %> </small>
+  </h2>
+
+  <section>
+    <%= simple_format post.body %>
+  </section>
+
+</article>
+<% end %>
+
+</section>

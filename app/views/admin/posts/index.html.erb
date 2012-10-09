@@ -1,0 +1,25 @@
+<section class="posts">
+
+<% @posts.each do |post| %>
+<article class="post">
+
+  <h2>
+    <%= post.title %> 
+    <small> <%= post.updated_at.strftime('%m.%d.%y') %> </small>
+  </h2>
+
+  <section>
+    <%= simple_format post.body %>
+  </section>
+
+  <footer>
+    <ul>
+     <li><%= link_to 'Show', admin_post_path(post) %></li>
+     <li><%= link_to 'Edit', edit_admin_post_path(post) %></li>
+     <li><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+  </footer>
+</article>
+<% end %>
+
+</section>

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+title  = Faker::Lorem.characters(10)
+body = Faker::Lorem.paragraphs
+
+post1 = Post.create([{ title: title, body: body }])
