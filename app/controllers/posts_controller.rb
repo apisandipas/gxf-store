@@ -1,13 +1,18 @@
 class PostsController < ApplicationController
+  
+  respond_to :html, :json
+
   def index
     @posts = Post.all
+    respond_with @posts
   end
 
   def show
     @post = Post.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @post }
-    end
+    respond_with @post
   end
+
+
+  
+
 end

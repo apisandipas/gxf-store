@@ -1,5 +1,5 @@
 GxfWebsite::Application.routes.draw do
- 
+  
   resources :posts, only: [:index, :show]
 
   get 'signup', to: 'users#new', as: 'signup'

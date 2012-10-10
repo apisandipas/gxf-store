@@ -1,25 +1,27 @@
 <section class="posts">
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Published?</th>
+    <th></th>
+    <th></th>
+  </tr>
 
 <% @posts.each do |post| %>
-<article class="post">
-
-  <h2>
-    <%= post.title %> 
-    <small> <%= post.updated_at.strftime('%m.%d.%y') %> </small>
-  </h2>
-
-  <section>
-    <%= simple_format post.body %>
-  </section>
-
-  <footer>
-    <ul>
-     <li><%= link_to 'Show', admin_post_path(post) %></li>
-     <li><%= link_to 'Edit', edit_admin_post_path(post) %></li>
-     <li><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    </ul>
-  </footer>
-</article>
+  <tr>
+    <td><%= link_to post.title, admin_post_path(post) %></td>
+    <td><%= post.body.truncate(20) %></td>
+    <td><%= post.is_published? %></td>
+    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+    <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
 
+</table>
+
+<%= link_to 'New Post', new_admin_post_path %>
+
+
 </section>
+

@@ -6,10 +6,7 @@ gem 'pg'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'jquery-rails'
-gem 'rails-backbone'
-gem 'hogan_assets'
-gem 'momentjs-rails'
-
+gem 'slugify'
 
 
 # Gems used only for assets and not required

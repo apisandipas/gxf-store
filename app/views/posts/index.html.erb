@@ -1,18 +1,15 @@
-<section class="posts">
-
-<% @posts.each do |post| %>
-<article class="post">
-
-  <h2>
-    <%= link_to post.title, post_path(post) %> 
-    <small> <%= post.updated_at.strftime('%m.%d.%y') %> </small>
-  </h2>
-
-  <section>
-    <%= simple_format post.body %>
-  </section>
-
-</article>
-<% end %>
-
+<section id="posts">
+  <% @posts.each do |post| %>
+    <% if post.published %>
+    <article>
+      <h2>
+        <%= link_to post.title, post_path(post) %>
+        <small> <%= post.created_at.strftime('%m.%d.%y') %> </small>
+      </h2>
+      <div>
+        <%= post.body %>
+      </div>
+    </article>
+    <% end %>
+  <% end  %>
 </section>
