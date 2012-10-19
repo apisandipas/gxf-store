@@ -4,6 +4,6 @@
       <small> <%= @post.created_at.strftime('%m.%d.%y') %> </small>
     </h2>
     <div>
-      <%= @post.body %>
+      <%= raw @post.body %>
     </div>
   </article>

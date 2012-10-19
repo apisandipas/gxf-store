@@ -2,7 +2,7 @@ class Admin::DashboardController < ApplicationController
   
   before_filter :authorize
 
-  layout 'admin'
+  layout 'admin-dash'
 
   def index
   end

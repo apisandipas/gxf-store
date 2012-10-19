@@ -1,6 +1,20 @@
 //= require foundation_and_overrides
- 
+//= require redactor-rails
+//= require scaffolding_REMOVE 
+
+@import "compass/layout/sticky-footer";
+@include sticky-footer(75px);
 
 body {
-  background: url('/assets/black_paper.png') 0 0 repeat;
+  background: url('/assets/light_toast.png') 0 0 repeat;
 }
+
+.redactor_editor { color: black;} 
+
+#login-form {
+  @extend .columns;
+  @extend .four;
+  @extend .centered;
+}
+
+table { width: 100%;} 

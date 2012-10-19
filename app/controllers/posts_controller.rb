@@ -3,12 +3,12 @@ class PostsController < ApplicationController
   respond_to :html, :json
 
   def index
-    @posts = Post.all
+    @posts = Post.published
     respond_with @posts
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.published.find(params[:id])
     respond_with @post
   end
 

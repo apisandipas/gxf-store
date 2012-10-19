@@ -26,10 +26,10 @@
 
 // $headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $headerFontWeight: bold;
-$headerFontColor: #777;
+// $headerFontColor: #777;
 // $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $bodyFontWeight: normal;
-$bodyFontColor: #fff;
+// $bodyFontColor: #fff;
 
 // Button Settings
 
@@ -54,9 +54,9 @@ $bodyFontColor: #fff;
 // $navFlyoutBaseWidth: 250px;
 
 // Modular Scale
-// $ratio: $golden;
-// $baseFontSize: 14px;
-// $importantModNum: 44px;
+$ratio: $golden;
+$baseFontSize: 14px;
+$importantModNum: 42px;
 
 // Tooltip Settings
 // $hasTipBorderBottom: dotted 1px #ccc;

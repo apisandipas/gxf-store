@@ -1,17 +1,15 @@
 <section class="posts">
 <table>
-  <tr>
+  <thead>
     <th>Title</th>
-    <th>Body</th>
     <th>Published?</th>
     <th></th>
     <th></th>
-  </tr>
+  </thead>
 
 <% @posts.each do |post| %>
   <tr>
     <td><%= link_to post.title, admin_post_path(post) %></td>
-    <td><%= post.body.truncate(20) %></td>
     <td><%= post.is_published? %></td>
     <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
     <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>

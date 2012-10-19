@@ -24,40 +24,45 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-	<div class="container">
-	
+	<div id="root">
+		<header>
+			<div class="container">
+			
+				<div class="row">
+					<div class="five columns">
+						<a href="/"><img src="/assets/logo_header.png" /></a>
+					</div>
+					<div class="seven columns">
+						<nav>
+							<%= link_to "blog", posts_path %>
+						</nav>
+					</div>
+				</div>
+			
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="row">
+	 			 <%= yield %>
+	 		</div>	 
+	  </div>
+	  <div id="root_footer"></div>
+	</div><!-- end of root (for Compass sticky footer)-->
+
+	<footer class="container" id="footer">
 		<div class="row">
-			<div class="five columns">
-				<a href="/"><img src="/assets/logo_header.png" /></a>
-			</div>
-			<div class="seven columns">
-				<nav>
-					<%= link_to "blog", posts_path %>
-				</nav>
-			</div>
+			<p>2012 &copy; Good Fortune Clothing. All Rights Reserved.
+			
+			<span class="right "><% if current_user %>
+				    Logged in as <%= current_user.email %>.
+				    <%= link_to "Log Out", logout_path, class: 'button secondary small' %>
+				  <% else%>
+						<%= link_to "Log In", login_path, class: 'button secondary small' %>
+					<% end %></span>
+			</p>
 		</div>
-	
-	</div>
-</header>
-
-	<div class="container">
-		<div class="row">
- 			 <%= yield %>
- 		</div>	 
-  </div>
-
-<footer class="container">
-	<div class="row">
-		<% if current_user %>
-	    Logged in as <%= current_user.email %>.
-	    <%= link_to "Log Out", logout_path %>
-	  <% else%>
-			<%= link_to "Sign Up", signup_path %>
-			<%= link_to "Log In", login_path %>
-		<% end %>
-	</div>
-</footer>
+	</footer>
 
 </body>
 </html>
