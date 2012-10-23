@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.published.find(params[:id])
+    @post = Post.published.find_by_permalink!(params[:id])
     respond_with @post
   end
 

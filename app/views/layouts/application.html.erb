@@ -54,7 +54,8 @@
 		<div class="row">
 			<p>2012 &copy; Good Fortune Clothing. All Rights Reserved.
 			
-			<span class="right "><% if current_user %>
+			<span class="right ">
+					<% if current_user %>
 				    Logged in as <%= current_user.email %>.
 				    <%= link_to "Log Out", logout_path, class: 'button secondary small' %>
 				  <% else%>

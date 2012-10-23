@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  layout 'admin-dash'
+
   def new
   end
 
