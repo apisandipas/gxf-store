@@ -25,8 +25,6 @@ group :assets do
 end
 
 group :test, :development do
-  #gem 'guard-rails-assets'
-  #gem 'guard-jasmine-headless-webkit'
   gem 'faker'
   gem 'jasmine-headless-webkit'
   gem 'jasmine'
@@ -37,6 +35,5 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'guard-rspec'
   gem 'launchy'
 end

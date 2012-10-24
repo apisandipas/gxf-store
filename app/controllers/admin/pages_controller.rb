@@ -80,7 +80,7 @@ class Admin::PagesController < ApplicationController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to pages_url }
+      format.html { redirect_to admin_pages_url, notice: 'Page was successfully deleted' }
       format.json { head :no_content }
     end
   end

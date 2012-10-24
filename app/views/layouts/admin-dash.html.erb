@@ -29,7 +29,6 @@
     <nav class="top-bar">
       <ul>
         <li class="name"><h1><a href="/admin">Admin Dashboard</a></h1></li>
-        <li class="toggle-topbar"><a href="#"></a></li>
       </ul>
       <% if current_user %>
       <section>
@@ -51,11 +50,12 @@
 
       <div id="content" class="twelve columns">
         <%= yield %>
+        <%= render 'shared/custom-flash', flash: flash %>
+
       </div>
        
     </div>   
   </div>
-
 
 </body>
 </html>

@@ -38,7 +38,7 @@ class Admin::PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_permalink!(params[:id])
   end
 
   # POST /posts
@@ -86,7 +86,7 @@ class Admin::PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to admin_posts_url, alert: 'Post was deleted!.' }
       format.json { head :no_content }
     end
   end

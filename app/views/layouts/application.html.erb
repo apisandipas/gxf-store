@@ -45,6 +45,8 @@
 		<div class="container">
 			<div class="row">
 	 			 <%= yield %>
+ 			   <%= render 'shared/custom-flash', flash: flash %>
+
 	 		</div>	 
 	  </div>
 	  <div id="root_footer"></div>
@@ -64,6 +66,5 @@
 			</p>
 		</div>
 	</footer>
-
 </body>
 </html>
