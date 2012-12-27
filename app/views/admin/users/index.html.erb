@@ -1,24 +1,30 @@
+<div class="button-bar">
+  <ul class="button-group">
+    <li><%= link_to glyph_helper('z') + ' New User', new_admin_post_path, class: 'radius button secondary' %></li>
+  </ul>  
+</div>
 <section class="users">
-<table>
-  <thead>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-  </thead>
+  <table>
+    <thead>
+      <th >Email</th>
+      <th >Created At</th>
+      <th></th>
+    </thead>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%=  user.email %></td>
-   
-    <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
-    <td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%=  user.email %></td>
+     <td><%=  user.created_at.strftime('%d/%m/%y') %></td>
+      <td>
+        <ul class="button-group even">
+          <li><%= link_to glyph_helper('k') + 'Edit', edit_admin_user_path(user), class: 'button secondary small' %></li>
+          <li><%= link_to glyph_helper('g') + 'Delete' , admin_user_path(user), class: 'button secondary small', method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </td>
+    </tr>
+  <% end %>
 
-</table>
-
-<%= link_to 'New User', new_admin_user_path %>
-
+  </table>
 
 </section>
 

@@ -1,25 +1,39 @@
+  <%= title 'Admin - Manage Posts' %>
+  <span class="left inline"><h3>Manage Posts</h3></span>
+  <ul class="button-group right">
+    <li><%= link_to glyph_helper('z') + ' New Post', new_admin_post_path, class: 'radius button secondary' %></li>
+  </ul>  
+
+    
 <section class="posts">
-<table>
-  <thead>
-    <th>Title</th>
-    <th>Published?</th>
-    <th></th>
-    <th></th>
-  </thead>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Status</th>
+      <th></th>
+     
+    </thead>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to post.title, admin_post_path(post) %></td>
-    <td><%= post.is_published? %></td>
-    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-    <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, admin_post_path(post) %></td>
+      <td>
 
-</table>
+        <%= render 'admin/posts/post_status', post: post %>
 
-<%= link_to 'New Post', new_admin_post_path %>
+      </td>
+      <td>
+        <ul class="button-group radius">
 
+          <li> 
+            <%= link_to link_to glyph_helper('k') + 'Edit', edit_admin_post_path(post), class: 'button success small' %>
+          </li>
+          <li><%= link_to link_to glyph_helper('g') + 'Delete', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert small' %></li>
+        </ul>
+      </td>
+    </tr>
+  <% end %>
 
+  </table>
 </section>
 

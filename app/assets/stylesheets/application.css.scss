@@ -2,6 +2,19 @@
 //= require redactor-rails
 //= require scaffolding_REMOVE 
 
+@font-face {
+  font-family: 'FoundationIconsGeneral';
+  src: url(font-path('foundation-icons-general.eot'));
+  src: url(font-path('foundation-icons-general.eot?') + '#iefix') format('embedded-opentype'),
+       url(font-path('foundation-icons-general.woff')) format('woff'),
+       url(font-path('foundation-icons-general.ttf')) format('truetype'),
+       url(font-path('foundation-icons-general.svg') +'#FoundationIconsGeneral') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.glyph {  font-size: 16px; line-height: 1; }
+.glyph.general { font-family: 'FoundationIconsGeneral'; }
+
 @import "compass/layout/sticky-footer";
 @include sticky-footer(75px);
 
@@ -10,7 +23,6 @@ body {
   // background: #bada55;
 }
 
-.redactor_editor { color: black;} 
 
 #login-form {
   @extend .columns;
@@ -19,3 +31,32 @@ body {
 }
 
 table { width: 100%;} 
+
+
+// TODO: Export this 
+.pagination {
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+  a, span {
+    padding: 0.2em 0.3em; }
+  // .disabled {
+  //   color: #aaaaaa; }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    color:#fff;
+    background-color: #da34be;;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;}
+  a {
+    text-decoration: none;
+    // color: black;
+    &:hover, &:focus {
+      text-decoration: underline; } } }
+
+
+
+ .admin table .button-group { margin-bottom:0;}     

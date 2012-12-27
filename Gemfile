@@ -6,12 +6,14 @@ gem 'pg'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'jquery-rails'
-gem 'slugify'
 gem 'redactor-rails'
 
 gem 'fog', '~> 1.3.1'
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'slugify'
+gem 'will_paginate', '~>3.0.0'
 
 
 # Gems used only for assets and not required

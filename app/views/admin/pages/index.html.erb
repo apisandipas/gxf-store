@@ -1,27 +1,39 @@
-<h1>Listing pages</h1>
 
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Permalink</th>
-    <th>Content</th>
-   
-    <th></th>
-    <th></th>
-  </thead>
+<%= title 'Admin - Manage Pages' %>
+  <span class="left inline"><h3>Manage Pages</h3></span>
+  <ul class="button-group right">
+    <li><%= link_to glyph_helper('z') + ' New Page', new_admin_page_path, class: 'radius button ' %></li>
+  </ul>  
 
-<% @pages.each do |page| %>
-  <tr>
-    <td><%= page.name %></td>
-    <td><%= page.permalink %></td>
-    <td><%= page.content %></td>
     
-    <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
-    <td><%= link_to 'Destroy', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<section class="pages">
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Permalink</th>
+      <th>Updated At</th>
+     
+      <th></th>
+      
+    </thead>
 
-<br />
+  <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.name %></td>
+      <td><%= page.permalink %></td>
+      <td><%= page.updated_at.strftime('%D') %></td>
+      <td>
+        <ul class="button-group radius">
 
-<%= link_to 'New Page', new_admin_page_path %>
+          <li> 
+            <%= link_to link_to glyph_helper('k') + 'Edit', edit_admin_page_path(page), class: 'button success radius small' %>
+          </li>
+          <li><%= link_to link_to glyph_helper('g') + 'Delete', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button radius alert small' %></li>
+        </ul>
+      </td>
+      
+    </tr>
+  <% end %>
+  </table>
+
+</section>

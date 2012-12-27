@@ -1,0 +1,9 @@
+<%= div_for @posts do |post| %>
+  <h2>
+    <%= link_to post.title, post_path(post) %>
+    <small> <%= post.created_at.strftime('%m.%d.%y') %> </small>
+  </h2>
+  <div>
+    <%= simple_format post.body %>
+  </div>
+<% end %>

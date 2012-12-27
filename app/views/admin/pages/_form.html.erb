@@ -15,9 +15,8 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :permalink %><br />
-    <%= f.text_field :permalink %>
+  <div class="field" id="permalinkPreview">
+    <label>Permalink:</label><p id="pre"></p>
   </div>
   <div class="field">
     <%= f.label :content %><br />
@@ -27,3 +26,33 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$(function(){
+    var currentValue, permalink, domain;
+    
+    //grabs the windows current location
+    domain = window.location.origin;
+
+    // sets the permalink preview on pageload & updates on changes
+    function makePermalink(){
+      permalink = $('#page_name').val().trim();
+      permalink = permalink.toLowerCase();
+      permalink = permalink.replace(/ /g, '-');
+      $('#permalinkPreview #pre').html(domain + '/' + permalink);
+    }
+
+    // Set the permalink preview on load
+    makePermalink();
+
+    // listens for change event to update the permalink preview
+    // It was keyup(). but couldnt use autocomplete.
+    $('#page_name').change(function(){
+        makePermalink();
+        
+
+    });          
+  
+
+});
+</script>

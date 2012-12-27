@@ -12,4 +12,8 @@ module ApplicationHelper
     end
   end
 
+  def glyph_helper(letter)
+    raw "<span class='glyph general'>#{letter}</span>  "
+  end
+
 end

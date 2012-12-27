@@ -13,7 +13,7 @@
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Admin</title>
+  <title><%= content_for?(:title) ? yield(:title) : "GoodXFortune.com" %></title>
   
   <!-- Included CSS Files -->
   <%= stylesheet_link_tag    "application" %>
@@ -23,12 +23,16 @@
   
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="admin">
   <header>
   <div class="container">
     <nav class="top-bar">
       <ul>
-        <li class="name"><h1><a href="/admin">Admin Dashboard</a></h1></li>
+        <li class="name">
+          <h1> 
+            <%= link_to glyph_helper('m'), admin_path %> 
+          </h1>
+        </li>
       </ul>
       <% if current_user %>
       <section>

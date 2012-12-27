@@ -1,16 +1,5 @@
 <% title 'Blog' %>
 <section id="posts">
-  <% @posts.each do |post| %>
-   
-    <article>
-      <h2>
-        <%= link_to post.title, post_path(post) %>
-        <small> <%= post.created_at.strftime('%m.%d.%y') %> </small>
-      </h2>
-      <div>
-        <%= simple_format post.body %>
-      </div>
-    </article>
-  
-  <% end  %>
+  <%= render @posts %>
+  <%= will_paginate @posts %>
 </section>
